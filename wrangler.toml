@@ -1,0 +1,8 @@
+name = "arloclarke-security-headers"
+main = "cloudflare/security-headers-worker.js"
+compatibility_date = "2026-05-31"
+
+routes = [
+  { pattern = "arloclarke.com/*", zone_name = "arloclarke.com" },
+  { pattern = "www.arloclarke.com/*", zone_name = "arloclarke.com" }
+]

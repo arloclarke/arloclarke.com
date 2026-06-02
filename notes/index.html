@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Notes — Arlo Clarke</title>
+  <meta name="description" content="A small personal site from a software engineer for current thinking and unfinished observations." />
+  <link rel="canonical" href="https://arloclarke.com/notes/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/favicon-512.png" type="image/png" sizes="512x512" />
+  <link rel="apple-touch-icon" href="/assets/favicon-512.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Notes — Arlo Clarke" />
+  <meta property="og:description" content="A small personal site from a software engineer for current thinking and unfinished observations." />
+  <meta property="og:url" content="https://arloclarke.com/notes/" />
+  <meta property="og:site_name" content="Arlo Clarke" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Notes — Arlo Clarke" />
+  <meta name="twitter:description" content="A small personal site from a software engineer for current thinking and unfinished observations." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arlo Clarke",
+    "url": "https://arloclarke.com/",
+    "jobTitle": "Software Engineer",
+    "email": "hello@arloclarke.com",
+    "sameAs": [
+      "https://github.com/arloclarke",
+      "https://keybase.io/arloclarke",
+      "https://www.linkedin.com/in/arlo-clarke"
+    ]
+  }
+  </script>
+  <link href="/assets/fonts/site-fonts.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffdf8;
+      --text: #181612;
+      --muted: #726b60;
+      --line: rgba(24, 22, 18, .12);
+      --hover: rgba(24, 22, 18, .045);
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #000; }
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 24px 56px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
+      width: 100%;
+      padding: 34px max(24px, calc((100% - var(--max)) / 2)) 22px;
+      background: var(--bg);
+    }
+    .name {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+    }
+    nav {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav a[aria-current="page"] { color: var(--text); }
+    .hero { padding: 118px 0 88px; }
+    h1 {
+      margin: 0;
+      max-width: 680px;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(48px, 9vw, 86px);
+      line-height: .96;
+      font-weight: 400;
+      letter-spacing: -.055em;
+    }
+    .subhead {
+      margin: 26px 0 0;
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      letter-spacing: -.01em;
+    }
+    .notes-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+    .notes {
+      display: grid;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .note a {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      transition: background .16s ease, padding .16s ease;
+    }
+    .note a:hover {
+      background: var(--hover);
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .date {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+    .title {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    .excerpt {
+      margin: 8px 0 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    @media (max-width: 620px) {
+      .page { padding: 26px 18px 44px; }
+      header { padding: 26px 18px 18px; }
+      nav { gap: 16px; }
+      .hero { padding: 98px 0 66px; }
+      .note a { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+      .note a:hover { padding-left: 0; padding-right: 0; background: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <a class="name" href="/comms/">Arlo Clarke</a>
+      <nav aria-label="Primary">
+        <a aria-current="page" href="/notes/">Notes</a>
+        <a href="/comms/">hello@</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="intro">
+      <h1 id="intro">Notes on systems, ideas, and software.</h1>
+      <p class="subhead">A small personal site from a software engineer for current thinking and unfinished observations.</p>
+    </section>
+
+    <section id="notes" aria-labelledby="notes-heading">
+      <div class="notes-label">
+        <span id="notes-heading">Notes</span>
+        <span>Latest</span>
+      </div>
+      <ol class="notes">
+        <li class="note">
+          <a href="/notes/when-the-backlog-runs-out/">
+            <time class="date" datetime="2026-05-30">May 30</time>
+            <div>
+              <h2 class="title">When the backlog runs out</h2>
+              <p class="excerpt">A framework for autonomous product progress</p>
+            </div>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+</body>
+</html>
