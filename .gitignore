@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Python/generated cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Note artifact scratch output
+
+# Local drafts/sketches not intended for deploy
+sketches/
+
+# Local env/secrets
+.env
+.env.*
+!.env.example
