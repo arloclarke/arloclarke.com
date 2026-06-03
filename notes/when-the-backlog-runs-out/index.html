@@ -591,7 +591,14 @@
 
 
       <h2>Toy Example: a route-planner pressure loop</h2>
-      <p>The same structure becomes easier to reason about in a small product. Take a route planner. Its objective is narrow: given a messy request, return route guidance that is useful enough for an operator to act on or, when the request is underspecified, ask for the right clarification. Its product spine is also narrow: a single <code>plan_route(start, destination)</code> function that can be run again and again against route cases. Once the seed backlog is empty, the question is no longer “what task did a human write down next?” It is “where does this spine fail under pressure?”</p>
+      <p>The above framework is pretty abstract, so a toy example helps make concrete. Implemented for illustration is a route planner pressure loop.</p>
+
+      <p class="example-label">Toy route-planner objective function:</p>
+      <blockquote>
+        <p>Given a messy request, return route guidance that is useful enough for an operator to act on or, when the request is underspecified, ask for the right clarification.</p>
+      </blockquote>
+
+      <p>Its product spine is narrow: a single <code>plan_route(start, destination)</code> function that can be run again and again against route cases. Once the seed backlog is empty, the question is no longer “what task did a human write down next?” It is “where does this spine fail under pressure?”</p>
 
       <p>The pressure loop answers that by making the planner operate. It generates adversarial cases from the failures it has already seen, proposes replacement implementations, executes every candidate against the same active case bank, scores the observed outputs, and accepts only the candidate that improves the spine. The agent is not rewarded for producing a plausible diff. It is rewarded for moving the runnable product closer to the objective.</p>
 
